@@ -91,7 +91,7 @@ def create_exam_doc(output_path, problem_paths):
             elif tag.startswith("문제 "):
                 this_pid = tag.split()[1].rsplit('_', 1)[0]
                 if this_pid != current_passage_id:
-                    logger.warning(f"문제가 이전 지문과 매칭되지 않음: {tag}")  # 다른 문제가 동일 지문 참조시 2번 출력되지 않게 함
+                    logger.warning(f"문제가 이전 지문과 매칭되지 않음: {tag}")
                 insert_tag_via_clipboard(hwp, f"{passage_number-1}-{problem_number_in_passage})")
                 insert_formatted_content(hwp, path)
                 problem_number_in_passage += 1
